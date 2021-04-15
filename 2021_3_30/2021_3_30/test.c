@@ -63,9 +63,59 @@ void TestSeqList2()
 	SeqListDestory(&s);
 
 }
+
+
+void menu()
+{
+	printf("*************************");
+	printf("1.尾插数据   2.头插数据\n");
+	printf("3.尾删数据   4.头删数据\n");
+	printf("5.查找数据   6.打印数据\n");
+	printf("0.退出程序             \n");
+	printf("*************************");
+}
 int main()
 {
 	//TestSeqList1();
-	TestSeqList2();
+	//TestSeqList2();
+
+	SeqList s;
+	SeqListInit(&s);
+	int option = 0;
+	do
+	{
+		menu();
+		scanf("%d",&option);
+		int x = 0;
+		switch (option)
+		{
+		case 1:
+			printf("请输入要尾插的数据，以-1结束：");
+			while (1)
+			{
+				scanf("%s", &x);
+				if (x == -1)
+					break;
+			}
+			
+			
+			SeqListPushBack(&s, x);
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			break;
+		case 5:
+			break;
+		case 6:
+			SeqListPrint(&s);
+			break;
+		default:
+			break;
+		}
+	} while (option != 0);
+	SeqListDestory(&s);
 	return 0;
 }
