@@ -52,9 +52,12 @@ void ListPushFront(ListNode* phead, LTDataType x)
 	ListNode* first = phead->next;
 	ListNode* newnode = BuyListNode(x);
 	//phead newnode first
-	phead->next = newnode;
-	newnode->prev = phead;
+	/*newnode->prev = phead;*/
 	newnode->next = first;
+	newnode->prev = phead;
+	phead->next = newnode;
+	/*newnode->prev = phead;
+	newnode->next = first;*/
 	first->prev = newnode;
 }
 
