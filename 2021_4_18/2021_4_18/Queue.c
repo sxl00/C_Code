@@ -39,7 +39,7 @@ void QueuePush(Queue* pq, QDataType x)
 	else
 	{
 		pq->tail->next = newnode;  //tail的next指向newnode
-		pq->tail = newnode;  //把新的地址重新赋给tail的next
+		pq->tail = newnode;  //把新的地址重新赋给tail
 	}
 }
 

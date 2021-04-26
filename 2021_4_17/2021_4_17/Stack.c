@@ -31,7 +31,7 @@ void StackPush(Stack* pst, STDataType x)
 	assert(pst);
 	if (pst->top == pst->capacity)
 	{
-		STDataType* tmp = realloc(pst->a,sizeof(STDataType)*pst->capacity * 2);
+		STDataType* tmp =(STDataType*) realloc(pst->a,sizeof(STDataType)*pst->capacity * 2);
 		if (tmp == NULL)
 		{
 			printf("realloc fail\n");
