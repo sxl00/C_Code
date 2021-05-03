@@ -29,4 +29,3 @@ HPDataType HeapTop(HP* php);
 int HeapSize(HP* php);
 bool HeapEmpty(HP* php);
 void HeapPrint(HP* php);
-int* getLeastNumbers(int* arr, int arrSize, int k);

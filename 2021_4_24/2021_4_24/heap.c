@@ -153,34 +153,3 @@ void HeapPrint(HP* php)
 	//}
 	
 }
-
-int* getLeastNumbers(int* arr, int arrSize, int k){
-	if (k == 0)
-	{
-		//*returnSize = 0;
-		return NULL;
-	}
-	int* arrRet = (int*)malloc(sizeof(int)*k);
-	//前k个数建立大堆
-	for (int i = 0; i <k; i++)
-	{
-		arrRet[i] = arr[i];
-	}
-	for (int j = (k - 1 - 1); j >= 0; j--)
-	{
-		AdjustDown(arrRet, k, j);
-	}
-
-
-	//剩下的N-K个数，比堆顶的小，就替换堆顶数据，进堆
-	for (int i = k; i < arrSize; i++)
-	{
-		if (arr[i] < arrRet[0])
-		{
-			arrRet[0] = arr[i];
-			AdjustDown(arrRet, k, 0);
-		}
-	}
-	//*returnSize = k;
-	return arrRet;
-}
